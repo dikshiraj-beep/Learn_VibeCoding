@@ -16,3 +16,4 @@ for mark in scores:
     print(f"Mark: {mark} -> Grade: {grade}")
 
 
+print("\nGrading complete!")
