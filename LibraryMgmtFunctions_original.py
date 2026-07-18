@@ -24,7 +24,7 @@ def search_customer(customers, full_name):
     print(f"Searching for customer: {full_name}.")
 
 customers = []
-library_books = []
+books = []
 
 print("Welcome to the Library Management System!")
 
