@@ -4,6 +4,12 @@ BOOKS_FILE = "books.txt"
 CUSTOMERS_FILE = "customers.txt"
 
 
+def get_menu_choice():
+    choice = input("Enter your choice (1-10): ").strip()
+    print(f"You entered: {choice}")
+    return choice
+
+
 def load_books(filename):
     books = []
     if os.path.exists(filename):
@@ -77,6 +83,17 @@ def search_book(books, title):
         if book["title"].lower() == title.lower():
             return book
     return None
+
+
+def list_books(books):
+    if not books:
+        print("No books found.")
+        return
+
+    print("\nBooks in the library:")
+    for book in books:
+        status = "Available" if book["available"] else "Checked out"
+        print(f"- {book['title']} by {book['author']} ({book['year']}) [{status}]")
 
 
 def add_customer(customers, full_name):
@@ -163,9 +180,11 @@ def main():
         print("6. Add a customer")
         print("7. Remove a customer")
         print("8. Search for a customer")
-        print("9. Exit")
+        print("9. List all books")
+        print("10. Exit")
 
-        choice = input("Enter your choice (1-9): ")
+        choice = get_menu_choice()
+        print(f"Selected option: {choice}")
 
         if choice == "1":
             title = input("Enter book title: ")
@@ -230,6 +249,9 @@ def main():
                 print("Customer not found.")
 
         elif choice == "9":
+            list_books(books)
+
+        elif choice == "10":
             print("Goodbye!")
             break
 
