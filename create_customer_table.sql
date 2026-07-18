@@ -1,4 +1,4 @@
-CREATE TABLE customer (
+CREATE TABLE Lib_customer (
     Customer_ID INT PRIMARY KEY,
     First_Name VARCHAR(100),
     Last_Name VARCHAR(100),
@@ -8,7 +8,7 @@ CREATE TABLE customer (
     Member_Since DATE
 );
 
-INSERT INTO customer (Customer_ID, First_Name, Last_Name, MemberID, Expiration, Books_CheckedOut, Member_Since) VALUES
+INSERT INTO Lib_customer (Customer_ID, First_Name, Last_Name, MemberID, Expiration, Books_CheckedOut, Member_Since) VALUES
 (1, 'Alice', 'Johnson', 'M1001', '2026-12-31', 2, '2023-01-15'),
 (2, 'Bob', 'Smith', 'M1002', '2025-10-20', 1, '2022-04-10'),
 (3, 'Carol', 'Davis', 'M1003', '2026-08-15', 3, '2021-09-05'),
@@ -21,18 +21,20 @@ INSERT INTO customer (Customer_ID, First_Name, Last_Name, MemberID, Expiration, 
 (10, 'Jack', 'Jackson', 'M1010', '2026-07-18', 3, '2021-02-09');
 
 -- Update a customer's information
-UPDATE customer
+UPDATE Lib_customer
 SET Books_CheckedOut = 4
 WHERE Customer_ID = 1;
 
 -- Delete a customer record
-DELETE FROM customer
+DELETE FROM Lib_customer
 WHERE Customer_ID = 10;
 
 -- Select all customers
-SELECT * FROM customer;
+SELECT * FROM Lib_customer;
 
 -- Select a specific customer
 SELECT Customer_ID, First_Name, Last_Name
-FROM customer
+FROM Lib_customer
 WHERE Customer_ID = 1;
+
+drop table Lib_customer
