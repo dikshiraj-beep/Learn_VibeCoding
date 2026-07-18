@@ -19,3 +19,20 @@ INSERT INTO customer (Customer_ID, First_Name, Last_Name, MemberID, Expiration, 
 (8, 'Henry', 'Anderson', 'M1008', '2026-09-25', 5, '2019-12-03'),
 (9, 'Isabella', 'Thomas', 'M1009', '2027-03-20', 0, '2024-05-14'),
 (10, 'Jack', 'Jackson', 'M1010', '2026-07-18', 3, '2021-02-09');
+
+-- Update a customer's information
+UPDATE customer
+SET Books_CheckedOut = 4
+WHERE Customer_ID = 1;
+
+-- Delete a customer record
+DELETE FROM customer
+WHERE Customer_ID = 10;
+
+-- Select all customers
+SELECT * FROM customer;
+
+-- Select a specific customer
+SELECT Customer_ID, First_Name, Last_Name
+FROM customer
+WHERE Customer_ID = 1;
