@@ -37,4 +37,4 @@ SELECT Customer_ID, First_Name, Last_Name
 FROM Lib_customer
 WHERE Customer_ID = 1;
 
-drop table Lib_customer
+--drop table Lib_customer

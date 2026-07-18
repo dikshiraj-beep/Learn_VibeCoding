@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#fdf2f8"/>
+  <g opacity="0.95">
+    <rect x="110" y="130" width="260" height="150" rx="26" fill="#ffffff" stroke="#e9d5ff" stroke-width="3"/>
+    <text x="186" y="215" font-family="Arial, sans-serif" font-size="76" fill="#7c3aed">$</text>
+    <circle cx="380" cy="220" r="18" fill="#ec4899" opacity="0.2"/>
+  </g>
+  <g opacity="0.95">
+    <rect x="720" y="120" width="300" height="180" rx="28" fill="#ffffff" stroke="#f9a8d4" stroke-width="3"/>
+    <text x="815" y="225" font-family="Arial, sans-serif" font-size="82" fill="#ec4899">$</text>
+    <path d="M790 180c32-28 76-28 108 0" stroke="#8b5cf6" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+  <g opacity="0.8">
+    <rect x="240" y="520" width="320" height="180" rx="30" fill="#ffffff" stroke="#d8b4fe" stroke-width="3"/>
+    <text x="346" y="635" font-family="Arial, sans-serif" font-size="86" fill="#a855f7">$</text>
+    <path d="M310 590h160" stroke="#ec4899" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g opacity="0.85">
+    <rect x="780" y="500" width="220" height="140" rx="24" fill="#ffffff" stroke="#f5c2e7" stroke-width="3"/>
+    <text x="850" y="590" font-family="Arial, sans-serif" font-size="72" fill="#c026d3">$</text>
+  </g>
+  <g opacity="0.35">
+    <path d="M150 760c80-120 132-143 200-143" stroke="#7c3aed" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M860 770c80-120 132-143 200-143" stroke="#ec4899" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

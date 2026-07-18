@@ -1,0 +1,276 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    color: #222;
+    background-color: #fdf2f8;
+    background-image:
+        linear-gradient(135deg, rgba(253, 242, 248, 0.34), rgba(245, 231, 255, 0.42)),
+        url('/static/finance-real.webp');
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-attachment: fixed, fixed;
+    animation: fadeInBody 0.8s ease-out;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 24px;
+}
+.hero {
+    background: linear-gradient(90deg, rgba(124, 58, 237, 0.72), rgba(236, 72, 153, 0.76));
+    color: white;
+    padding: 24px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 16px 35px rgba(124, 58, 237, 0.16);
+    position: relative;
+    overflow: hidden;
+    animation: slideInHero 0.8s ease-out;
+}
+
+@keyframes slideInHero {
+    from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.25), transparent 45%);
+    pointer-events: none;
+}
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+.hero-copy {
+    max-width: 580px;
+}
+.hero-pill-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+.hero-pill {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.18);
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.24);
+}
+.hero-posters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.poster-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.16);
+    backdrop-filter: blur(8px);
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    animation: floatIn 0.7s ease-out both;
+}
+.poster-card:nth-child(2) { animation-delay: 0.1s; }
+.poster-card:nth-child(3) { animation-delay: 0.2s; }
+.poster-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(255,255,255,0.24);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+@keyframes floatIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.poster-card strong {
+    font-size: 0.95rem;
+}
+.poster-card span {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+.subtitle {
+    margin: 8px 0 0;
+    opacity: 0.95;
+}
+.card {
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    width: min(100%, 900px);
+    margin-left: auto;
+    margin-right: auto;
+    animation: cardRise 0.7s ease-out;
+}
+
+@keyframes cardRise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#expense-form.card {
+    background: linear-gradient(135deg, rgba(255,247,251,0.24), rgba(252,231,243,0.30));
+    border: 1px solid rgba(249,168,212,0.18);
+}
+
+.summary.card {
+    background: linear-gradient(135deg, rgba(250,245,255,0.24), rgba(253,242,248,0.30));
+    border: 1px solid rgba(216,180,254,0.18);
+}
+
+.chart-card {
+    background: linear-gradient(135deg, rgba(253,244,255,0.24), rgba(252,231,243,0.30));
+    border: 1px solid rgba(245,194,231,0.18);
+}
+form {
+    display: grid;
+    gap: 10px;
+}
+input, select, textarea, button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d8e0eb;
+    border-radius: 10px;
+}
+button {
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(236, 72, 153, 0.25);
+}
+button.secondary {
+    background: #ef4444;
+}
+.warning-banner {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-weight: 700;
+    border: 1px solid #fca5a5;
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.stat-box {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(233,213,255,0.24);
+    border-radius: 12px;
+    padding: 14px;
+}
+.stat-box strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-top: 6px;
+}
+.chart {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 0;
+}
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.row-label {
+    min-width: 120px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #334155;
+}
+.track {
+    flex: 0 0 300px;
+    width: 300px;
+    height: 18px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f472b6, #a855f7, #7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    min-width: 24px;
+}
+.fill.over-limit {
+    background: linear-gradient(90deg, #dc2626, #be185d);
+    box-shadow: 0 0 0 2px #fbcfe8 inset;
+}
+.over-limit-label {
+    color: #dc2626;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-left: 6px;
+}
+.chart-empty {
+    color: #64748b;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px;
+    text-align: left;
+}
+.actions button {
+    margin-right: 6px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+}
