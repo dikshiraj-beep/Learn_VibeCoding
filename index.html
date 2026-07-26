@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <div class="hero-copy">
+                    <p class="eyebrow">Personal Finance</p>
+                    <h1>Expense Tracker</h1>
+                    <p class="subtitle">Track your spending, update entries, and review your monthly habits with clarity.</p>
+                    <div class="hero-pill-row">
+                        <span class="hero-pill">Monthly view</span>
+                        <span class="hero-pill">Category alerts</span>
+                        <span class="hero-pill">Simple updates</span>
+                    </div>
+                </div>
+                <div class="hero-posters">
+                    <div class="poster-card">
+                        <strong>Budget</strong>
+                        <span>Stay in control</span>
+                    </div>
+                    <div class="poster-card">
+                        <strong>Goals</strong>
+                        <span>Save smarter</span>
+                    </div>
+                    <div class="poster-card">
+                        <strong>Alerts</strong>
+                        <span>Know when limits are reached</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <form id="expense-form" class="card">
+            <h2>Add Expense</h2>
+            <input type="text" id="title" placeholder="Expense title" required>
+            <input type="number" id="amount" step="0.01" placeholder="Amount" required>
+            <select id="category" required></select>
+            <input type="date" id="expense_date" required>
+            <textarea id="notes" placeholder="Notes"></textarea>
+            <button type="submit" id="submit-btn">Add Expense</button>
+        </form>
+
+        <form id="earning-form" class="card">
+            <h2>Add Earnings</h2>
+            <input type="text" id="earning-title" placeholder="Earning title" required>
+            <input type="number" id="earning-amount" step="0.01" placeholder="Amount" required>
+            <input type="text" id="earning-source" placeholder="Source" required>
+            <input type="date" id="earning-date" required>
+            <textarea id="earning-notes" placeholder="Notes"></textarea>
+            <button type="submit" id="earning-submit-btn">Add Earnings</button>
+        </form>
+
+        <div class="summary card">
+            <h2>Dashboard</h2>
+            <div id="warning-banner" class="warning-banner" hidden>⚠️ Total expenses exceed 500</div>
+            <div class="stats">
+                <div class="stat-box">
+                    <span>Total Expenses</span>
+                    <strong id="total-expenses">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Total Earnings</span>
+                    <strong id="total-earnings">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Net Balance</span>
+                    <strong id="net-balance">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Expense Count</span>
+                    <strong id="expense-count">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="card chart-card">
+            <h3>Spending by Category</h3>
+            <div id="category-chart" class="chart"></div>
+        </div>
+
+        <div class="dashboard card">
+            <h3>Expense List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Notes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list"></tbody>
+            </table>
+        </div>
+
+        <div class="dashboard card">
+            <h3>Earnings List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Amount</th>
+                        <th>Source</th>
+                        <th>Date</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="earnings-list"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
