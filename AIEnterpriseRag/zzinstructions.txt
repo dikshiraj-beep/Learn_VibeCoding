@@ -1,1 +1,28 @@
-test
+create a specification document - i want to build a enterprise level RAG solution for searching all my internal documents documents may be in html, pdf, txt file as inputs.
+
+some docs are very long spanning more than few pages.
+
+I want to organize the scope in a way it can be easily developed and deployed in parts.
+
+multiple projects
+1. project to chunk the documents files into different types - such as semantic chunks, contextual chunks, abstractive summary, RAPTOR, QA Pairs, Factoids - we need to have some way to track the source document to the destination vector records stored in postgreSQL database 
+
+2. a project which calls the FastAPI to store the chunked documents to store it in vector database
+
+3. a fastAPI to do the CRUD operations to postgreSQL or Qdrant based on the configuration - donot use sqlalchemy
+
+4. RAG search - streamlit, which can call the FastAPI for vector search and provide the results - this can use openAI model or ollama as a configurable parameter.
+
+I want to have each project organized in its own folder.
+
+Chunking & creating derivative artifacts:
+
+use docling to convert RAW docs - PDF/doc/HTML to a proper markdown
+
+use chonkie to apply semantic chunking technique and create chunks for each document.
+
+for other derivative artifacts use - use ollama model runner -> onprem models -> download models llama or gemma or qwen 
+
+create a highlevel spec for the above
+
+Ask me more clarifying questions***
